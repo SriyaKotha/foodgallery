@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Add Image | Food Gallery</title>
+        <title>edit Image | Food Gallery</title>
         <link href="{% static '/home.css' %}" rel="stylesheet">
         <link href="{% static '/add.css' %}" rel="stylesheet">
         <link
@@ -57,7 +57,7 @@
 
             <form class="form" action="" method="POST" name="form">
                 {% csrf_token %}
-                <h2>Add New Image</h2>
+                <h2>Edit Image</h2>
                 <p type="Image Name:"> <div class="c1" style="margin-top:10px;">{{ ImgName }}</div></p>
                 <p type="Image URL:"><div class="c1" style="margin-top:10px;">{{ form.ImgURL }}</div></p>
                 <p type="Image Details:"><div class="c1" style="margin-top:10px;">{{ form.ImgDetails }}</div></p>
