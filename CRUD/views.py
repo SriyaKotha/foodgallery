@@ -32,8 +32,9 @@ def edit_image(request, id):
     ImgName = obj.ImgName
     return render(request, 'edit_image.html', {'form': form, 'ImgName': ImgName})
 
-def view_image(request):
-    return render(request, 'view_image.html')
+def view_image(request, id):
+    img = Image.objects.get(id=id)
+    return render(request, 'view.html', context={'data': img})
 
 def delete_image(request, id):
     Image.objects.get(id=id).delete()

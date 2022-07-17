@@ -175,7 +175,6 @@ nav ul button:hover {
     font-weight: 600;
     font-family: cursive;
     background: -webkit-linear-gradient(60deg, #370D32, #ff6790);
-    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -246,3 +245,4 @@ button:hover {
     border: none;
     width: 10px;
 }
+

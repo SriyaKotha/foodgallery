@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | Food Gallery</title>
+    <link href="{% static '/home.css' %}" rel="stylesheet">
+    <link href="{% static '/view.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="nav-container" style="margin-bottom: 0px;">
+        <nav>
+            <div class="title">
+                <a href="/">
+                    <h1>Food Gallery</h1>
+                </a>
+            </div>
+            <ul>
+                <li>
+                    <form action="/search/" method="get">
+                        <input type="text" placeholder="Search Image Name" name="ImgName"
+                            style="width: 200px; padding: 8px; font-size: small; font-family: cursive; text-align: center;"
+                            id="ImgName" />
+                        <button type="submit" style="
+                                    width: 32px;
+                                    border: none;
+                                    font-size: 20px;
+                                ">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
+                </li>
+                <li>
+                    <a class="trans-button" href="/new"><button type="button" style="width:150px ;">Add New
+                            Image</button></a>
+                </li>
+                <li>
+                    <a href="/">
+                        <i class="fa fa-home" style="font-size: 32px; color: white"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="wrapper">
+
+        <section class="comfort-container">
+            <div class="comfort-left-container">
+            </div>
+
+            <div class="comfort-right-container">
+                <div class="comfort-first-block"></div>
+                <div class="comfort-text-container">
+                    <h1><span> {{ data.ImgName }}</span></h1>
+                    <p>
+                        &emsp;&emsp;&emsp;{{ data.ImgDetails }}
+                    </p>
+                    <div class="buttons">
+                        <a href="/{{data.id}}/edit">
+                            <button class="buy-but" type="button">
+                                Edit
+                            </button>
+                        </a>
+                        <a href="/delete/{{data.id}}">
+                            <button class="buy-but" type="button">
+                                Delete
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comfort-center-container">
+                <div class="comfort-img-container">
+                    <img src="{{ data.ImgURL}}" />
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"
+        integrity="sha512-1dalHDkG9EtcOmCnoCjiwQ/HEB5SDNqw8d4G2MKoNwjiwMNeBAkudsBCmSlMnXdsH8Bm0mOd3tl/6nL5y0bMaQ=="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        //Comfort Timeline animation
+        var comfortTl = gsap.timeline({ repeat: 0, repeatDelay: 0 });
+        comfortTl.from('.comfort-left-container', 2, {
+            width: '0',
+            ease: Expo.easeInOut,
+        });
+
+        comfortTl.from(
+            '.nav-container',
+            1.8,
+            {
+                delay: 1,
+                y: -20,
+                opacity: 0,
+                ease: Expo.easeInOut,
+            },
+            '-=2'
+        );
+
+        comfortTl.from(
+            '.comfort-right-container',
+            1.8,
+            {
+                delay: 1,
+                width: '0',
+                opacity: '0',
+                ease: Expo.easeInOut,
+            },
+            '-=2'
+        );
+
+        comfortTl.from(
+            '.comfort-center-container',
+            1.8,
+            {
+                width: '0',
+                x: -20,
+                ease: Expo.easeInOut,
+            },
+            '-=1.8'
+        );
+
+        comfortTl.from(
+            '.side-comfort-title',
+            2,
+            {
+                y: 20,
+                opacity: 0,
+                ease: Expo.easeInOut,
+            },
+            '-=1.5'
+        );
+
+        comfortTl.from(
+            '.comfort-text-container',
+            2,
+            {
+                y: 20,
+                opacity: 0,
+                ease: Expo.easeInOut,
+            },
+            '-=1.5'
+        );
+
+        comfortTl.from(
+            '.com-social ul',
+            2,
+            {
+                delay: 1,
+                opacity: 0,
+                y: 20,
+                ease: Expo.easeInOut,
+            },
+            '-=3'
+        );
+
+    </script>
+</body>
+
+</html>
