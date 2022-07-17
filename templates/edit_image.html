@@ -1,0 +1,49 @@
+{% load static %}
+<html>
+    <head>
+
+    </head>
+    <body>
+        <form action="" method="POST" name="form">
+                {% csrf_token %}
+                <span class="login100-form-title p-b-34 p-t-27"> Edit Image </span>
+                <div class="wrap-input100 validate-input"
+                     data-validate="Enter username">
+                    <div class="input100">
+                        <div class="username">{{ ImgName }}</div>
+                    </div>
+                    <span class="focus-input100"
+                          data-placeholder="&#xf207;"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input"
+                     data-validate="Enter password">
+                    <div class="input100">
+                        {{ form.ImgURL }}
+                    </div>
+                    <span class="focus-input100"
+                          data-placeholder="&#xf191;"></span>
+                </div>
+                
+                <div class="wrap-input100 validate-input"
+                     data-validate="Enter password">
+                    <div class="input100">
+                        {{ form.ImgDetails }}
+                    </div>
+                    <span class="focus-input100"
+                          data-placeholder="&#xf191;"></span>
+                </div>
+
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn">Submit</button>
+                </div>
+                {% if messages %}
+                {% for message in messages %}
+                <div class="text-center p-t-90" style="margin-bottom: -60px;">
+                    <p class="txt1" style="font-size: 16px;">{{ message }}</p>
+                </div>
+                {% endfor %}
+                {% endif %}
+            </form>
+    </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Home | Food Gallery</title>
+        <link href="{% static '/home.css' %}" rel="stylesheet">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+    </head>
+
+    <body>
+        <div class="nav-container">
+            <nav>
+                <div class="title">
+                    <a href="/"><h1>Food Gallery</h1></a>
+                </div>
+                <ul>
+                    <li>
+                        <form action="/search/" method="get">
+                                <input
+                                    type="text"
+                                    placeholder="Search Image Name"
+                                    name="ImgName"
+                                    style="width: 200px; padding: 8px; font-size: small; font-family: cursive; text-align: center;"
+                                    id="ImgName"
+                                />
+                                <button
+                                    type="submit"
+                                    style="
+                                        width: 32px;
+                                        border: none;
+                                        font-size: 20px;
+                                    "
+                                >
+                                    <i class="fa fa-search"></i>
+                                </button>
+                        </form>
+                    </li>
+                    <li>
+                        <a class="trans-button" href="/new"
+                            ><button type="button" style="width:150px ;">Add New Image</button></a
+                        >
+                    </li>
+                    <li>
+                        <a href="/">
+                            <i class="fa fa-home" style="font-size: 32px; color: white"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <h1 style="font-family: cursive; color: #591651; width: 640px; margin-left: 490px; font-weight: 400;"> Get to know the best "Tastes of life"</h1>
+        <h2 style="font-family: cursive; color: #ff6790; width: 510px; margin-left: 550px; font-weight: 400;"> Explore here to know more about food</h2>
+        <div class="cards" style="margin-top: -15px;">
+            {% for i in page_obj%}
+            <div class="card">
+                <h1>{{ i.ImgName }}</h1>
+                <div class="img-cont">
+                    <img src="{{ i.ImgURL }}" alt="" />
+                </div>
+                <div class="reg-butt">
+                    <a href="/show/{{ i.id }}" class="butt"
+                        ><button type="button">Details</button></a
+                    >
+                    <a href="/{{ i.id }}/edit" class="butt"
+                        ><button type="button">Edit</button></a
+                    >
+                    <a href="/delete/{{ i.id }}" class="butt"
+                        ><button type="button">Delete</button></a
+                    >
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="pagination" style="text-align: center;">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                <a href="?page=1"><button type="button">&laquo; first</button></a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ page_obj.number }} of {{page_obj.paginator.num_pages }}.
+                </span>
+
+                {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}"
+                    >last &raquo;</a
+                >
+                {% endif %}
+            </span>
+        </div>
+    </body>
+</html>

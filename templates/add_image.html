@@ -1,0 +1,66 @@
+{% load static %}
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Add Image | Food Gallery</title>
+        <link href="{% static '/home.css' %}" rel="stylesheet">
+        <link href="{% static '/add.css' %}" rel="stylesheet">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+    </head>
+    <body>
+        <div class="nav-container">
+            <nav>
+                <div class="title">
+                    <a href="/"><h1>Food Gallery</h1></a>
+                </div>
+                <ul>
+                    <li>
+                        <form action="/search/" method="get">
+                                <input
+                                    type="text"
+                                    placeholder="Search Image Name"
+                                    name="ImgName"
+                                    style="width: 200px; padding: 8px; font-size: small; font-family: cursive;"
+                                    id="ImgName"
+                                />
+                                <button
+                                    type="submit"
+                                    style="
+                                        width: 32px;
+                                        border: none;
+                                        font-size: 20px;
+                                    "
+                                >
+                                    <i class="fa fa-search"></i>
+                                </button>
+                        </form>
+                    </li>
+                    <li>
+                        <a class="trans-button" href="/new"
+                            ><button type="button" style="width:150px ;">Add New Image</button></a
+                        >
+                    </li>
+                    <li>
+                        <a href="/">
+                            <i class="fa fa-home" style="font-size: 32px; color: white"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+            <form class="form" action="" method="POST" name="form">
+                {% csrf_token %}
+                <h2>Add New Image</h2>
+                <p type="Image Name:"> <div class="c1" style="margin-top:10px;">{{ image_form.ImgName }}</div></p>
+                <p type="Image URL:"><div class="c1" style="margin-top:10px;">{{ image_form.ImgURL }}</div></p>
+                <p type="Image Details:"><div class="c1" style="margin-top:10px;">{{ image_form.ImgDetails }}</div></p>
+                <button class="b1">Add</button>
+            </form>
+    </body>
+</html>

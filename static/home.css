@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    width: 100vw;
+    overflow-x: hidden;
+    background-color: whitesmoke;
+    /* background-image: linear-gradient(to bottom, #370D32 0%, #ff6790 100%); */
+    color: #252525;
+}
+
+button {
+    font-family: 'Open Sans', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.nav-container {
+    height: 65px;
+    width: 100%;
+    z-index: 500;
+    background-color: #370D32;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+    margin-bottom: 40px; 
+}
+
+nav {
+    width: 98%;
+    margin: auto;
+    min-height: 62px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+input {
+    border-radius: 5px;height: 32px; border:none
+}
+nav span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 10vh;
+    
+}
+
+nav span img {
+    height: 5vh;
+    margin-right: 10px;
+}
+
+nav span h1 {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 800;
+    
+}
+
+nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+nav ul li {
+    padding: 0px 20px;
+}
+
+nav .title h1 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-left: 50px;
+    font-family: cursive;
+}
+
+nav ul a:not(.trans-button):hover {
+    color: #fff;
+}
+
+nav ul button {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: cursive;
+    border: 2px solid #fff;
+    width: 120px;
+    height: 32px;
+    border-radius: 11px;
+    cursor: pointer;
+    background-color: transparent;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+nav ul button:hover {
+    scale: 1.07;
+}
+
+.cards {
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 120px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.cards .card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    /* 550 , 300 */
+    height: 425px;
+    width: 400px;
+    overflow: hidden;
+    margin-top: 50px;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
+    border: none;
+}
+
+.cards .card h1 {
+    font-size: 25px;
+    font-weight: 600;
+    font-family: cursive;
+    background: -webkit-linear-gradient(60deg, #370D32, #ff6790);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cards .card .img-cont {
+    height: 320px;
+    width: 400px;
+    -webkit-box-shadow: 0px 10px 20px -15px #464646;
+    box-shadow: 0px 10px 20px -15px #464646;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.cards .card .img-cont img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.img-cont:hover {
+    -webkit-box-shadow: 0px 10px 25px -15px #464646;
+    box-shadow: 0px 10px 25px -15px #464646;
+    scale: 1.1;
+}
+
+.img-cont:hover img {
+    height: 100%;
+    width: 100%;
+}
+
+.reg-butt {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.butt button {
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: cursive;
+    border: none;
+    width: 90px;
+    height: 32px;
+    border-radius: 15px;
+    background-image: -webkit-gradient(linear,
+            left top,
+            right top,
+            from(#370D32),
+            to(#ff6790));
+    background-image: linear-gradient(to bottom, #370D32 0%, #ff6790 100%);
+    outline: none;
+    cursor: pointer;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+button:hover {
+    scale: 1.07;
+    background-color: #ff6790;
+}
+
+.abc {
+    color: #ff6790;
+    border: none;
+    width: 10px;
+}
