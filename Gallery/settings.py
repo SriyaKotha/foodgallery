@@ -82,14 +82,25 @@ WSGI_APPLICATION = 'Gallery.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'galleryapp',
+#         'USER': 'root',
+#         'PASSWORD': 'Sriya369*',
+#         'HOST': 'localhost',
+#         'PORT': '3306'
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'galleryapp',
-        'USER': 'root',
-        'PASSWORD': 'Sriya369*',
-        'HOST': 'localhost',
-        'PORT': '3306'
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd2iemd1bq7ass0',
+        'USER': 'wkmtuwoudxgazl',
+        'PASSWORD': '545cc77383a5bf5aa6dd2bcdc9f360bf9b32e274fe398f3139451149be7b7a21',
+        'HOST': 'ec2-3-219-52-220.compute-1.amazonaws.com',
+        'PORT': '5432'
     }
 }
 
