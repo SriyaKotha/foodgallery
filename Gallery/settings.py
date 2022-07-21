@@ -97,10 +97,10 @@ WSGI_APPLICATION = 'Gallery.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd2iemd1bq7ass0',
-        'USER': 'wkmtuwoudxgazl',
-        'PASSWORD': '545cc77383a5bf5aa6dd2bcdc9f360bf9b32e274fe398f3139451149be7b7a21',
-        'HOST': 'ec2-3-219-52-220.compute-1.amazonaws.com',
+        'NAME': 'd8fo6k15vsnn8r',
+        'USER': 'vicoxjbdjzmtjw',
+        'PASSWORD': 'caf6eefa0d49ee812c05520598f7c801a39c90ebfc15c7d2dc030c855703f33d',
+        'HOST': 'ec2-54-208-104-27.compute-1.amazonaws.com',
         'PORT': '5432'
     }
 }
